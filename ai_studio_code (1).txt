@@ -1,0 +1,57 @@
+/
+├── docs/                             # Architecture blueprints and guidelines
+├── public/                           # Static assets served as-is (manifest, robots, icons)
+├── src/
+│   ├── assets/                       # Images, branding vectors, icons
+│   │   ├── branding/
+│   │   └── placeholders/
+│   │
+│   ├── components/                   # Shared presentation-only design system
+│   │   ├── ui/                       # Atomized elements (Button, Card, Input, Badge)
+│   │   ├── feedback/                 # Skeletons, spinners, empty views, alerts
+│   │   ├── form/                     # Standardized, accessible form wrappers
+│   │   └── layout/                   # Universal UI wrappers (Header, Nav, AppShell)
+│   │
+│   ├── core/                         # Plumbing and framework setups
+│   │   ├── config/                   # Constants, URLs, and environment interfaces
+│   │   ├── firebase/                 # Firebase SDK integration and exports
+│   │   ├── theme/                    # Color scales, fonts, custom style configurations
+│   │   └── types/                    # Common app-wide TypeScript types
+│   │
+│   ├── features/                     # Business domain capabilities
+│   │   ├── auth/                     # Authentication & verification document flow
+│   │   │   ├── domain/               # Entity schemas, DTOs, interface specifications
+│   │   │   ├── infrastructure/       # Firebase authentication implementations
+│   │   │   └── presentation/         # Views, registration forms, role routing hooks
+│   │   │
+│   │   ├── booking/                  # Booking state machine and concurrency transactions
+│   │   │   ├── domain/
+│   │   │   ├── infrastructure/
+│   │   │   └── presentation/
+│   │   │
+│   │   ├── review/                   # Mutually status-locked feedback
+│   │   │   ├── domain/
+│   │   │   ├── infrastructure/
+│   │   │   └── presentation/
+│   │   │
+│   │   └── search/                   # Radial geolocation search & filtering
+│   │       ├── domain/
+│   │       ├── infrastructure/
+│   │       └── presentation/
+│   │
+│   ├── hooks/                        # Cross-cutting UX utility hooks (theme, hardware sensors)
+│   ├── utils/                        # Deterministic pure utility modules (dates, geo-math)
+│   │   ├── date.ts                   # IST timezone calculations
+│   │   ├── geo.ts                    # Haversine formula
+│   │   └── validation.ts             # Input cleansing helpers
+│   │
+│   ├── App.tsx                       # Main entry component
+│   ├── index.css                     # Global CSS entry using tailwind imports
+│   └── main.tsx                      # DOM mounting and React initialization
+│
+├── tests/                            # Shared end-to-end integration tests
+├── firestore.rules                   # Production-grade Firestore security rules
+├── firestore.indexes.json            # Geospatial composite indexes configuration
+├── package.json                      # Build scripts and project manifest
+├── tsconfig.json                     # Strict TypeScript configurations
+└── vite.config.ts                    # Vite dev and build system configurations
