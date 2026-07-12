@@ -1,0 +1,34 @@
+Section 7: Strategic Implementation Roadmap
+We break the launch into 4 independently testable, high-fidelity milestones targeting a premium product aesthetic (matching modern tools like Airbnb and Stripe).
+Milestone 1: Visual Identity & Secure Onboarding (Days 1–3)
+Deliverables:
+Onboarding and landing layout utilizing a clean, high-contrast, professional palette (Inter font, slate grays, clean typography, soft card shadows).
+Dynamic Registration/Login screen with multi-step onboarding forms:
+Role selection (patient / physio).
+Physio-specific verification fields (License, Aadhar, Degree Certificate upload targets).
+Strict route routing rules using client-side auth context hooks.
+Verification Strategy: Automated routing tests with mock unverified and verified user accounts to ensure dashboard isolation.
+Milestone 2: Service Area & Scheduling Engine (Days 4–6)
+Deliverables:
+Availability Management Console for physiotherapists: Interactive grid to toggle days and define specific daily operational hours.
+Service Area Configurator utilizing Google Places Autocomplete API with coordinate extraction (lat, lng) and a dynamic sliding radius selector (in km).
+Live profile rendering component illustrating therapist biography, expertise badges, operating area, and interactive calendar.
+Verification Strategy: Validation test suites assessing correct parsing of weekly recurring slots and coordinate generation.
+Milestone 3: Search Discovery & Haversine Geolocation (Days 7–9)
+Deliverables:
+Discovery Marketplace Page for Patients: High-end search dashboard matching the aesthetic of premium services.
+Google Places search input enabling patients to set search centers.
+Haversine distance calculating algorithm running client-side to filter out therapists whose declared service area does not encompass the patient's coordinates.
+Card-based listing layout displaying therapist name, specialization, distance (calculated to 1 decimal place), and quick-view capabilities.
+Verification Strategy: Visual testing using varying patient coordinates to confirm perfect filter accuracy on mock therapist operational bounds.
+Milestone 4: Transactional Booking & Review Engine (Days 10–12)
+Deliverables:
+Booking Request Drawer: Fully integrated on-page selector enabling date and slot reservation.
+Transactional booking creation pipeline executing check-and-write locking inside the Firestore SDK to guarantee zero double-booking concurrency bugs.
+Real-time Request Dashboards:
+Physiotherapist Portal: Incoming request queue with quick "Accept" / "Decline" buttons.
+Patient Portal: Live status feed showing pending, accepted, and completed sessions.
+Review Submission Dialog: Automatically locks to "completed" bookings; enables patient star rating and feedback text.
+Verification Strategy: Simultaneous client-browser execution testing to confirm transaction resolution on double-booking attempts.
+Phase 8 Execution: Ready for Implementation
+I have finalized the strategic design phase and resolved all functional ambiguities. I am prepared to begin writing code and establishing the repository layout. Please acknowledge this complete technical specification, and I will proceed with establishing the project foundation (Milestone 1).
